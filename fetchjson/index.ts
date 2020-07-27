@@ -16,7 +16,16 @@ axios.get(url)
   //* uses the interface to check against the keys
   //* The TS compiler will throw errors before JS run. 
   const todo = response.data as Todo
-  
+
+//? If we log todo here it shows the userID property, even though it's not referenced in the interface
+//!   console.log(todo)
+//? However, if we try to assign it and log that, the compiler will throw an error because the property doesn't exist
+//! const userID = todo.userId
+
+
+
+
+
 const id = todo.id
 const title = todo.title
 const completed = todo.completed
