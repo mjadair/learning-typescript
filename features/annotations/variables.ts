@@ -68,3 +68,18 @@ let point: { x: number, y: number} = {
 const logNumber: (i: number) => void = (i: number) => {
   console.log(i)
 }
+
+
+
+//! This is a variable whose type cannot be inferred
+// this is because we init it as false, but then require it to be a number
+//* essentially, we can assign multiple potential types to a variable
+// this is a bad coding example but could apply more realitically if a response could be a number of different kinds of object.
+let numbers = [- 10, -1, 12]
+let numberAboveZero: boolean | number = false
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > 0) {
+    numberAboveZero = numbers[i]
+  }
+}
