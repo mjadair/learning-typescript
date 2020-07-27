@@ -14,20 +14,25 @@ axios.get(url)
 .then((response) => {
 
   //* uses the interface to check against the keys
+  //* The TS compiler will throw errors before JS run. 
   const todo = response.data as Todo
   
-const ID = todo.id
+const id = todo.id
 const title = todo.title
-const finished = todo.completed
+const completed = todo.completed
 
-
-console.log(`
-The Todo with IT:${ID} 
-Has a title of: ${title}
-Is it finished? ${finished}
-`)
-
+logToDo(id, title, completed)
 })
+
+//* Here we add types to our variables, the compiler will warn us before runtime if the type fails
+const logToDo = (id: number, title: string, completed: boolean) => {
+
+  console.log(`
+  The Todo with IT:${id} 
+  Has a title of: ${title}
+  Is it finished? ${completed}
+  `)
+}
 
 
 
