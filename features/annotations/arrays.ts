@@ -27,7 +27,16 @@ carMakers.push(56)
 
 
 // TS also helps with array methods
+// it flags if we try to executy a method not available to strings on the return statement
 carMakers.map((car: string): string => {
   return car.toUpperCase()
 })
 
+
+
+//! ARRAYS WITH DIFFERENT TYPES
+//hover over the below and its clearly inferred that the array can have dates and strings
+const importantDates = [new Date(), '2030-10-10']
+
+// the same can be specified like the below.
+const otherDates: (Date | string)[] = []
